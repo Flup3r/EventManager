@@ -1,8 +1,0 @@
-{
-  "runtimeOptions": {
-    "additionalProbingPaths": [
-      "C:\\Users\\flup3\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\flup3\\.nuget\\packages"
-    ]
-  }
-}
