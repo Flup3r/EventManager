@@ -48,10 +48,7 @@ namespace Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("FirstName")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("LastName")
+                    b.Property<string>("Email")
                         .HasColumnType("TEXT");
 
                     b.Property<byte[]>("PasswordHash")

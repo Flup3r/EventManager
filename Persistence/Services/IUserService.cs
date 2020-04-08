@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using Domain.Entities;
 using Persistence.Helpers;
+using System.Text.RegularExpressions;
 
 namespace Persistence.Services
 {
     public interface IUserService
     {
-        User Authenticate(string username, string password);
+        User Authenticate(string emailUsername, string password);
         IEnumerable<User> GetAll();
         User GetById(Guid id);
         User Create(User user, string password);
@@ -25,24 +26,48 @@ namespace Persistence.Services
             _context = context;
         }
 
-        public User Authenticate(string username, string password)
-        {
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+        public User Authenticate(string EmailUsername, string password)
+        {    
+            if (string.IsNullOrEmpty(EmailUsername) || string.IsNullOrEmpty(password))
+            {
                 return null;
-
-            var user = _context.Users.SingleOrDefault(x => x.Username == username);
-
-            // check if username exists
-            if (user == null)
-                return null;
-
-            // check if password is correct
-            if (!VerifyPasswordHash(password, user.PasswordHash, user.PasswordSalt))
-                return null;
-
-            // authentication successful
-            return user;
-        }
+            }
+            var user = _context.Users.SingleOrDefault(x => x.Email == EmailUsername );
+            if(EmailUsername.IndexOf('@') > -1)
+            {
+                if (user == null)
+                {
+                    return null;
+                }
+                else
+                {
+                    if (!VerifyPasswordHash(password, user.PasswordHash, user.PasswordSalt))
+                        {
+                            return null;
+                        }
+                        return user;
+                }           
+            }
+            else
+            {
+                user = _context.Users.SingleOrDefault(x => x.Username == EmailUsername );
+                if (user == null)
+                {
+                    return null;
+                }
+                else
+                {
+                    if (!VerifyPasswordHash(password, user.PasswordHash, user.PasswordSalt))
+                        {
+                            return null;
+                        }
+                        return user;
+                }          
+            }                     
+        } 
+                   
+        
+           
 
         public IEnumerable<User> GetAll()
         {
@@ -63,6 +88,9 @@ namespace Persistence.Services
             if (_context.Users.Any(x => x.Username == user.Username))
                 throw new AppException("Username \"" + user.Username + "\" is already taken");
 
+            if (_context.Users.Any(x => x.Email == user.Email))
+                throw new AppException("EmailAddress \"" + user.Email + "\" is already taken");
+            
             byte[] passwordHash, passwordSalt;
             CreatePasswordHash(password, out passwordHash, out passwordSalt);
 
@@ -92,12 +120,15 @@ namespace Persistence.Services
                 user.Username = userParam.Username;
             }
 
-            // update user properties if provided
-            if (!string.IsNullOrWhiteSpace(userParam.FirstName))
-                user.FirstName = userParam.FirstName;
-
-            if (!string.IsNullOrWhiteSpace(userParam.LastName))
-                user.LastName = userParam.LastName;
+            // update user Email if provided
+            if (!string.IsNullOrWhiteSpace(userParam.Email))
+            {
+                 if (_context.Users.Any(x => x.Email == userParam.Email))
+                    throw new AppException("Email " + userParam.Email + " is already taken");
+                
+                user.Email = userParam.Email;
+            }
+                
 
             // update password if provided
             if (!string.IsNullOrWhiteSpace(password))

@@ -9,7 +9,7 @@ using Persistence.Helpers;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(SqliteDataContext))]
-    [Migration("20200402092449_InitialCreate")]
+    [Migration("20200408094511_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -50,10 +50,7 @@ namespace Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("FirstName")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("LastName")
+                    b.Property<string>("Email")
                         .HasColumnType("TEXT");
 
                     b.Property<byte[]>("PasswordHash")

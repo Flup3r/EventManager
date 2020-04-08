@@ -5,8 +5,7 @@ namespace Domain.Users
     public class AuthenticateModel
     {
         [Required]
-        public string Username { get; set; }
-
+        public string EmailUsername { get; set; }
         [Required]
         public string Password { get; set; }
     }

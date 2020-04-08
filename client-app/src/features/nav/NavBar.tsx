@@ -1,6 +1,7 @@
 import React from "react";
 import { Menu, Container, Button} from "semantic-ui-react";
-import  Example from './LoginModal' 
+import  LoginModal from './LoginModal' 
+import LoginDescription from "./loginDescription";
   
 
 const NavBar = () => {
@@ -16,7 +17,7 @@ const NavBar = () => {
         <Menu.Item name="something2" />
       </Container>
       <Menu.Item fixed="right">
-        <Example></Example>
+        <LoginModal/>
       </Menu.Item>
     </Menu>
   );

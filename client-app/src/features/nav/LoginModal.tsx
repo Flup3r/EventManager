@@ -2,21 +2,21 @@ import React, { Component } from 'react'
 import { Button, Header, Modal, Grid, Form, Segment} from 'semantic-ui-react'
 import  LoginDescription from './registerDescription'
 import  RegisterDescription from './loginDescription'
-class ModalModalExample extends Component<any, any> {
+class LoginModal extends Component<any, any> {
     constructor(props: any) {
       super(props);
       this.state = {
           
-        elements: <LoginDescription></LoginDescription>
+        elements: <LoginDescription/>
       }
     }
    
     updateContentLogin = () => {
-        this.setState({ elements: <RegisterDescription></RegisterDescription>});
+        this.setState({ elements: <LoginDescription/>});
     }  
     
     updateContentRegister = () => {
-        this.setState({ elements: <LoginDescription></LoginDescription>});
+        this.setState({ elements: <RegisterDescription/>});
     }  
 
     render() {
@@ -38,4 +38,4 @@ class ModalModalExample extends Component<any, any> {
         )
         }
     }
-export default ModalModalExample
+export default LoginModal
