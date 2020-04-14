@@ -22,11 +22,11 @@ class LoginModal extends Component<any, any> {
     render() {
         return (
         
-            <Modal trigger={<Button>Log in</Button>}>
+            <Modal trigger={<Button inverted>Sign in</Button>}>
                 <Modal.Header >
                     <Button.Group attached='top' size = 'massive'>
-                        <Button color='teal' onClick={this.updateContentLogin}> Sing in</Button>
-                        <Button color='blue' onClick={this.updateContentRegister}>Sing up</Button>
+                        <Button color='teal' onClick={this.updateContentLogin}> Sign in</Button>
+                        <Button color='blue' onClick={this.updateContentRegister}>Sign up</Button>
                     </Button.Group>
                 </Modal.Header>
                 <Modal.Content>
