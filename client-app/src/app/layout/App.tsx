@@ -3,6 +3,7 @@ import { Header, Icon, Container } from 'semantic-ui-react'
 import axios from 'axios';
 import Navbar from '../../features/nav/NavBar';
 import HomePage from '../../features/home/HomePage';
+import Footer from '../../features/nav/Footer';
 
 class App extends Component {
   state = {
@@ -26,6 +27,7 @@ class App extends Component {
           <HomePage />
           <Container style={{marginTop: '7em'}}>
           </Container>
+          <Footer />
       </Fragment>
     );
   }
