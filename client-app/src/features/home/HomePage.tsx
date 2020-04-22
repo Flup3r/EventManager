@@ -1,8 +1,7 @@
 import React, { Fragment } from "react";
-import { Image, Divider, Container, Button } from "semantic-ui-react";
+import { Image, Divider, Container } from "semantic-ui-react";
+import ImageGallery from "react-image-gallery";
 import SlideShow from "react-image-show";
-import {Link} from 'react-router-dom';
-import FormPage from '../form/FormPageF'
 
 const images = [
   "https://picsum.photos/id/1018/1000/600/",
@@ -14,13 +13,13 @@ const HomePage = () => {
   return (
     <Fragment>
         <Container style={{ marginTop: 60 }}>
-      <Image src="/assets/banner.jfif" fluid />
+        <Image src="/assets/banner.jpg" fluid />
       </Container>
       <Container textAlign="center" style={{ marginTop: 50 }}>
         Center Aligned
       </Container>
       <Container textAlign="justified">
-        <b>Justified</b>
+        <b>Opis Apilkacji</b>
         <Divider />
         <p>
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
@@ -37,10 +36,6 @@ const HomePage = () => {
           ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam
           ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi.
         </p>
-        <Button as={Link} to='/formpage' size="huge" inverted>
-          
-              Take me there!!
-            </Button>
       </Container>
       <Divider />
       <Container>
@@ -62,7 +57,7 @@ const HomePage = () => {
       <Container textAlign="center" style={{ marginTop: 50 }}>
         Center Aligned
       </Container>
-      <Container textAlign="justified" style={{ marginBottom: 50 }}>
+      <Container textAlign="justified">
         <b>Justified</b>
         <Divider />
         <p>

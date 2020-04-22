@@ -10,7 +10,8 @@ import {
   Switch,
 } from "react-router-dom";
 import FormPageF from "../../features/form/FormPageF";
-import ContactForm from "../../features/contact/ContactForm"
+import ContactForm from "../../features/contact/ContactForm";
+import Footer from '../../features/nav/Footer';
 
 
 class App extends Component {
@@ -34,6 +35,7 @@ class App extends Component {
         <Route exact path="/formpage" component={FormPageF} />
         <Route exact path="/contact" component={ContactForm} />
         <Container style={{ marginTop: "7em" }}></Container>
+        <Footer />
       </Fragment>
     );
   }

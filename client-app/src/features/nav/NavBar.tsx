@@ -1,20 +1,22 @@
 import React from "react";
-import { Menu, Container, Button } from "semantic-ui-react";
+import { Menu, Container, Button} from "semantic-ui-react";
+import  Modal from './LoginModal' 
+  
 
 const NavBar = () => {
   return (
-    <Menu fixed="top" inverted>
+    <Menu  fixed="top" inverted >
       <Container>
         <Menu.Item header>
           <img src="/assets/logo.jpg" alt="logo" style={{marginRight: 10}} />
           Event Manager
         </Menu.Item>
-        <Menu.Item name="home" />
-        <Menu.Item name="something" />
-        <Menu.Item name="something2" />
+        <Menu.Item name="home"/>
+        <Menu.Item name="Oferta"/>
+        <Menu.Item name="O nas"/>
       </Container>
       <Menu.Item fixed="right">
-        <Button positive content="Login" />
+        <Modal/>
       </Menu.Item>
     </Menu>
   );
