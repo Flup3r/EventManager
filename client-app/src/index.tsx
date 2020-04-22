@@ -7,7 +7,7 @@ import * as serviceWorker from './serviceWorker';
 import ScrollToTop from "./app/layout/ScrollToTop";
 import { Router } from "react-router-dom";
 import { Provider } from 'react-redux';
-import store from './app/stores/store';
+import store from './app/stores/storeF';
 
 
 

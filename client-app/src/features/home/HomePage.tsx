@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { Image, Divider, Container, Button } from "semantic-ui-react";
 import SlideShow from "react-image-show";
 import {Link} from 'react-router-dom';
-import FormPage from '../form/FormPage'
+import FormPage from '../form/FormPageF'
 
 const images = [
   "https://picsum.photos/id/1018/1000/600/",
