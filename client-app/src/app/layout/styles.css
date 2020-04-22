@@ -10,3 +10,8 @@ body {
     rgb(202, 194, 124) 89%
   ) !important;
 }
+
+.ui.menu{
+  background: #E5E5E5;
+
+  }

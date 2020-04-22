@@ -13,13 +13,13 @@ const HomePage = () => {
   return (
     <Fragment>
         <Container style={{ marginTop: 60 }}>
-      <Image src="/assets/banner.jpg" fluid />
+        <Image src="/assets/banner.jpg" fluid />
       </Container>
       <Container textAlign="center" style={{ marginTop: 50 }}>
         Center Aligned
       </Container>
       <Container textAlign="justified">
-        <b>Opis aplikacji</b>
+        <b>Opis Apilkacji</b>
         <Divider />
         <p>
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
