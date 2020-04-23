@@ -22,6 +22,7 @@ const ValidatedLoginForm = () => (
                 .then(function (response) {
                     //handle success
                     console.log("Succes" ,response);
+                    
                 })
                 .catch(function (response) {
                     //handle error
@@ -54,9 +55,9 @@ const ValidatedLoginForm = () => (
             } = props;
             return (
                 
-              <Form onSubmit={handleSubmit} size="large">
+              <form onSubmit={handleSubmit} size="large">
                 <Segment stacked>
-                <Form.input
+                <input
                   name="email"
                   type="text"
                   placeholder="Enter your email"
@@ -68,7 +69,7 @@ const ValidatedLoginForm = () => (
                 {errors.email && touched.email && (
                   <div className="input-feedback">{errors.email}</div>
                 )}
-                <Form.input
+                <input
                   name="password"
                   type="password"
                   placeholder="Enter your password"
@@ -84,7 +85,7 @@ const ValidatedLoginForm = () => (
                   Login
                 </Button>
                 </Segment>
-              </Form>
+              </form>
             );
           }}
         </Formik>
