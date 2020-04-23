@@ -12,6 +12,7 @@ import {
 import FormPageF from "../../features/form/FormPageF";
 import ContactForm from "../../features/contact/ContactForm";
 import Footer from '../../features/nav/Footer';
+import ContactPage from "../../features/contact/ContactPage";
 
 
 class App extends Component {
@@ -33,7 +34,7 @@ class App extends Component {
         <Route exact path="/" component={HomePage} />
         <Navbar />
         <Route exact path="/formpage" component={FormPageF} />
-        <Route exact path="/contact" component={ContactForm} />
+        <Route exact path="/contact" component={ContactPage} />
         <Container style={{ marginTop: "7em" }}></Container>
         <Footer />
       </Fragment>
