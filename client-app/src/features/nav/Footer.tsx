@@ -5,7 +5,7 @@ class Footer extends Component {
     render() {
         return (
             
-            <Menu>
+            <Menu fixed="bottom">
                 <Container>
                     <Menu.Item>
                         © 2020 EventManager

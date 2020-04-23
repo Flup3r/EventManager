@@ -1,6 +1,6 @@
 import React from "react";
 import { Menu, Container, Button} from "semantic-ui-react";
-import  Modal from './LoginModal' 
+import  Modal from '../signIuModal/LoginModal' 
   
 
 const NavBar = () => {

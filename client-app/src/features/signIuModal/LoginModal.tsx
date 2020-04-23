@@ -1,22 +1,22 @@
 import React, { Component } from 'react'
 import { Button, Header, Modal, Grid, Form, Segment} from 'semantic-ui-react'
-import  LoginDescription from './registerDescription'
-import  RegisterDescription from './loginDescription'
+import  ValidatedLogin from './ValidatedLoginForm'
+import  ValidatedRegister from './ValidatedRegisterForm'
 class LoginModal extends Component<any, any> {
     constructor(props: any) {
       super(props);
       this.state = {
           
-        elements: <LoginDescription/>
+        elements: <ValidatedLogin/>
       }
     }
    
     updateContentLogin = () => {
-        this.setState({ elements: <LoginDescription/>});
+        this.setState({ elements: <ValidatedLogin/>});
     }  
     
     updateContentRegister = () => {
-        this.setState({ elements: <RegisterDescription/>});
+        this.setState({ elements: <ValidatedRegister/>});
     }  
 
     render() {
