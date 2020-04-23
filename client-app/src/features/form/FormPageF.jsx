@@ -5,10 +5,9 @@ import Styles from '../../app/layout/Styles'
 import { Field } from 'react-final-form'
 import Wizard from './Wizard'
 import storeF from '../../app/stores/storeF'
-import FormStateToRedux from '../../app/stores/formStateToRedux'
-import FormStateFromRedux from '../../app/stores/formStateFromRedux'
 import { Provider } from 'react-redux'
 import DateTimePicker from 'react-widgets/lib/DateTimePicker';
+import { Grid, Header, Segment} from 'semantic-ui-react'
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
@@ -18,13 +17,13 @@ const onSubmit = async values => {
 
 }
 
-const renderDateTimePicker = ({ input: { onChange, value }, showTime }) =>
+/*const renderDateTimePicker = ({ input: { onChange, value }, showTime }) =>
   <DateTimePicker
     onChange={onChange}
     format="DD MM YYYY"
     time={showTime}
     value={!value ? null : new Date(value)}
-  />
+  />*/
 
 const Error = ({ name }) => (
   <Field
@@ -50,27 +49,14 @@ const FormPageF = () => (
     >
       <Wizard.Page
         validate={values => {
-          const errors = {}
-          if (!values.email) {
-            errors.email = 'Required'
-          }
+          const errors = {}          
           if (!values.typeOfEvent) {
             errors.typeOfEvent = 'Required'
           }
           return errors
         }}
       >
-        <div>
-          <label>Email</label>
-          <Field
-            name="email"
-            component="input"
-            type="email"
-            placeholder="Email"
-          />
-          <Error name="email" />
-        </div>
-        <div>
+         <div>
           <label>Type of Event</label>
           <Field name="typeOfEvent" component="select">
             <option />
@@ -84,10 +70,7 @@ const FormPageF = () => (
         </div>
       </Wizard.Page>
       <Wizard.Page validate={values => {
-          const errors = {}
-          if (!values.email) {
-            errors.email = 'Required'
-          }
+          const errors = {}         
           if (!values.amountOfPax) {
             errors.amountOfPax = 'Required'
           }
@@ -123,24 +106,32 @@ const FormPageF = () => (
         
       </Wizard.Page>
       <Wizard.Page>
-      <div>
-          <label>Indoors or Outdoors?</label>
-          <div>
-            <label>
+      <div class="ui column centered grid">
+        <div class="four column centered row">
+          <Header>Indoors or Outdoors?</Header>
+            <div class="column">
+            Indoors 
               <Field
                 name="inOrOut"
                 component="input"
                 type="radio"
                 value="indoors"
-              />{' '}
-              Indoors
-            </label>
-            <label>
-              <Field name="inOrOut" component="input" type="radio" value="outdoors" />{' '}
-              Outdoors
-            </label>
+              />
+            </div>{' '}
+            <div class="column">
+            Outdoor
+              <Field
+                name="inOrOut" 
+                component="input" 
+                type="radio" 
+                value="outdoors"
+              /> 
+            </div>{' '}
+              
+            </div>
           </div>
-        </div>
+         
+        
       </Wizard.Page>
       <Wizard.Page
         validate={values => {

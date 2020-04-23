@@ -80,16 +80,16 @@ class ContactForm extends Component {
 
     var templateParams = {
       from_name: this.state.name + '(' + this.state.email + ')',
-      to_name: "kj.tymczasowy1992@gmail.com",
+      to_name: "burlinskif@gmail.com",
       subject: this.state.subject,
       message_html: this.state.message,
     };
     emailjs
       .send(
         "gmail",
-        "template_AvYab0TH",
+        "template_3hekQlZY",
         templateParams,
-        "user_O1wv45AemxaofnY3QwCLw"
+        "user_ZNh0BKYMtzIUijSk0JBoF"
       )
       .then(
         function (response) {

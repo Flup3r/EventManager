@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Form } from 'react-final-form'
-import { JsonToTable } from "react-json-to-table";
+
 
 export default class Wizard extends React.Component {
   static propTypes = {

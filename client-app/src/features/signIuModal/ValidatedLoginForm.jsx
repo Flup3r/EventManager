@@ -54,9 +54,9 @@ const ValidatedLoginForm = () => (
             } = props;
             return (
                 
-              <form onSubmit={handleSubmit} size="large">
+              <Form onSubmit={handleSubmit} size="large">
                 <Segment stacked>
-                <input
+                <Form.input
                   name="email"
                   type="text"
                   placeholder="Enter your email"
@@ -68,7 +68,7 @@ const ValidatedLoginForm = () => (
                 {errors.email && touched.email && (
                   <div className="input-feedback">{errors.email}</div>
                 )}
-                <input
+                <Form.input
                   name="password"
                   type="password"
                   placeholder="Enter your password"
@@ -84,7 +84,7 @@ const ValidatedLoginForm = () => (
                   Login
                 </Button>
                 </Segment>
-              </form>
+              </Form>
             );
           }}
         </Formik>
