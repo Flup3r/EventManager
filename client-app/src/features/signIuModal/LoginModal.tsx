@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Header, Modal, Grid, Form, Segment} from 'semantic-ui-react'
+import { Button, Modal} from 'semantic-ui-react'
 import  ValidatedLogin from './ValidatedLoginForm'
 import  ValidatedRegister from './ValidatedRegisterForm'
 class LoginModal extends Component<any, any> {

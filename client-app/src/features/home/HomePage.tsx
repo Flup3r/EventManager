@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
-import { Image, Divider, Container, Button } from "semantic-ui-react";
-import ContactPage from "./../contact/ContactPage";
+import { Image, Divider, Container, Button, Grid } from "semantic-ui-react";
 import SlideShow from "react-image-show";
 import { Link } from "react-router-dom";
 
@@ -20,16 +19,20 @@ const HomePage = () => {
         <Image src="/assets/banner.jpg" fluid />
       </Container>
       <Container textAlign="justified" style={{ marginTop: 30 }}>
-        <h3>What is it all about</h3>
+        <h3>What it is all about</h3>
         <p>
         Event Manager platform is an all in one tool to manage real life events. It is a brand new initiative raising the quality standards in the event industry. Event Manager is a high-level planning tool for anyone that has a ton of resources to keep an eye. It can schedule projects, people, facilities, and equipment. It also provides a free online marketplace of certified event vendors and venues. This allows consumers to utilize the tool for free and find reliable, and pre-screened event professionals and suppliers. Anyone listed on the site has had to pass various checks to prove that they operate with integrity, so it acts as a seal of approval and quality.
         </p>
       </Container>
       <Divider />
       <Container>
-      <Button positive style={{justifyContent: "center", display: "flex"}} as={Link} to='/formpage' size="huge" inverted>
+      <Grid>
+      <Grid.Column textAlign="center">
+      <Button color="black" style={{justifyContent: "center"}} as={Link} to='/formpage' size="huge"  >
               Take me there!!
             </Button>
+            </Grid.Column>
+            </Grid>
       </Container>
       <Divider />
       <Container>
@@ -49,9 +52,13 @@ const HomePage = () => {
       </Container>
       <Divider />
       <Container>
-      <Button negative style={{justifyContent: "center", display: "flex"}} as={Link} to='/contact' size="huge" inverted>
+      <Grid>
+      <Grid.Column textAlign="center">
+      <Button color="black" style={{justifyContent: "center"}} as={Link} to='/contact' size="huge" >
               Contact Us
             </Button>
+            </Grid.Column>
+            </Grid>
       </Container>
       <Divider />
       <Container textAlign="justified">

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Menu, Input, Icon, Container } from 'semantic-ui-react';
+import { Menu, Icon, Container } from 'semantic-ui-react';
 import '../../app/layout/styles.css';
 class Footer extends Component {
     render() {

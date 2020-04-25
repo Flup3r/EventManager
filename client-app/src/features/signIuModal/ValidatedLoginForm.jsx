@@ -1,8 +1,9 @@
 import React from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import { Button, Header, Grid, Form, Segment} from 'semantic-ui-react';
+import { Button, Header, Grid, Segment} from 'semantic-ui-react';
 import axios from "axios"
+
 
 const ValidatedLoginForm = () => (
   <Grid textAlign='center' style={{ height: '60vh' }} verticalAlign='middle'>
@@ -22,11 +23,16 @@ const ValidatedLoginForm = () => (
                 .then(function (response) {
                     //handle success
                     console.log("Succes" ,response);
-                    
+                    localStorage.setItem('token', JSON.stringify(response.token));
+                    localStorage.setItem('id', JSON.stringify(response.data.id));
+                    localStorage.setItem('username', JSON.stringify(response.data.username));
+                    localStorage.setItem('email', JSON.stringify(response.data.email)); 
+                    window.location.reload();                 
                 })
                 .catch(function (response) {
                     //handle error
                     console.log("Wrong email or password", response);
+                    
                 });
               console.log("Logging in", values);
               setSubmitting(false);
@@ -94,3 +100,4 @@ const ValidatedLoginForm = () => (
 );
 
 export default ValidatedLoginForm;
+

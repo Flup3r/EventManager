@@ -8,10 +8,7 @@ import ScrollToTop from "./app/layout/ScrollToTop";
 import { Router } from "react-router-dom";
 import { Provider } from 'react-redux';
 import store from './app/stores/storeF';
-
-
-
-
+import 'react-toastify/dist/ReactToastify.min.css';
 
 
 export const history = createBrowserHistory();

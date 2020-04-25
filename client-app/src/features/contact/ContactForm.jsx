@@ -6,6 +6,7 @@ import InputF from "./InputF";
 import TextAreaF from "./TextAreaF";
 import 'jquery';
 import { Form } from "semantic-ui-react";
+import { toast } from "react-toastify";
 
 class ContactForm extends Component {
   constructor(props) {
@@ -93,7 +94,7 @@ class ContactForm extends Component {
       )
       .then(
         function (response) {
-          toastr.success("Message sent successful");
+          toast.info('Message sent successful');
           console.log("SUCCESS!", response.status, response.text);
         },
         function (err) {

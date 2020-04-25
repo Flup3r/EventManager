@@ -8,13 +8,14 @@ import storeF from '../../app/stores/storeF'
 import { Provider } from 'react-redux'
 import DateTimePicker from 'react-widgets/lib/DateTimePicker';
 import { Grid, Header, Segment} from 'semantic-ui-react'
+import { toast } from "react-toastify";
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 const onSubmit = async values => {
   await sleep(300)
-  window.alert(JSON.stringify(values, 0, 2))
-
+  toast.info("Form submitted");
+ 
 }
 
 /*const renderDateTimePicker = ({ input: { onChange, value }, showTime }) =>
